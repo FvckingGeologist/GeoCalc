@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            {% block title %}  {% endblock %}
+        <style>
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <!--Top menu -->
+        <div class="sidebar" >
+ 		<div class="profile">
+                	<img src="../static/earth.svg">
+                	<h3>Геолого-</h3>
+			<h3>экономический</h3>
+			<h3>калькулятор</h3>
+                	<p>(экспресс-оценка)</p>
+            	</div>
+		<div class="MENUITEM">
+  		<ul>
+                <li>
+                    <a href="../index" {% block li1 %}  {% endblock %}>
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Введение</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../geocalc" {% block li2 %}  {% endblock %}>
+                        <span class="icon"><i class="fa-solid fa-calculator"></i></span>
+                        <span class="item">ГеоКалькулятор</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../report" {% block li3 %}  {% endblock %}>
+                        <span class="icon"><i class="fas fa-chart-line"></i></span>
+                        <span class="item">Отчет</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../method" {% block li4 %}  {% endblock %}>
+                        <span class="icon"><i class="fas fa-cog"></i></span>
+                        <span class="item">Методика оценки</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../contacts" {% block li5 %}  {% endblock %}>
+                        <span class="icon"><i class="fas fa-user-friends"></i></span>
+                        <span class="item">Контакты</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../help" {% block li6 %}  {% endblock %}>
+                        <span class="icon"><i class="fa-solid fa-question"></i></span>
+                        <span class="item">Помощь</span>
+                    </a>
+                </li>
+                        </li>
+                <li>
+                    <a href="../map" {% block li7 %}  {% endblock %}>
+                        <span class="icon"><i class="fa-solid fa-earth-americas"></i></span>
+                        <span class="item">Карта</span>
+                    </a>
+                </li>
+            </ul>         
+        </div>
+</div>
+ <div class="mainbar">
+    {% block content %}
+    {% endblock %}
+ </div>
+
+  <script>
+
+  </script>
+</body>
+</html>

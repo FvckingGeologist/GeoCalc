@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    <title>GeoCalc</title>
+{% endblock %}
+
+{% block li1 %}  {% endblock %}
+{% block li2 %} class="active" {% endblock %}
+{% block li3 %}  {% endblock %}
+{% block li4 %}  {% endblock %}
+{% block li5 %}  {% endblock %}
+{% block li6 %}  {% endblock %}
+
+{% block content %}
+    <center><h2>Зашрузите файл исходных данных для расcчета</h2></center>
+    <center><h3>(шаблон для заполнения скачайте ниже)</h3></center>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <center><input type="file" name="excel_file"></center>
+    <br>
+    <center><img class="calcr" src="../static/calc.jpg"></center>
+    <center><button type="submit">Run GeoCalc</button></center>
+</form>
+<br><br><br>
+
+<center><h2>Шалоны исходных данных для различных вариантов расчета: "</h2>
+    <img src="../static/oredeposit.jpg" alt="W3Schools" width=60% >
+    <br>
+    <h3>Вариант 1: Рудные месторождения. Пологое залегание рудных тел (до 30 градусов)</h3><br>
+    <p>Скачать шаблон</p>
+    <a href="../static/data.xlsx" download>
+    <img src="../static/download.jpg" alt="W3Schools" width="60" height="60">
+    </a></center>
+    <br><br><br>
+    <center><img src="../static/oilfield.jpg" alt="W3Schools" width=60% >
+    <br>
+    <h3>Вариант 2: Нефтяные месторождения</h3><br>
+    <p>Скачать шаблон</p>
+    <a href="../static/data.xlsx" download>
+    <img src="../static/download.jpg" alt="W3Schools" width="60" height="60">
+    </a></center>
+{% endblock %}
