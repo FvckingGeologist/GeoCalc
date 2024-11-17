@@ -1,3 +1,5 @@
+from itertools import count
+
 from django.shortcuts import render
 from openpyxl import load_workbook
 from .models import InData2
@@ -15,9 +17,9 @@ def geocalc(request):
     NullVar()
     global excel_file
     if request.method == 'POST':
-        wb = load_workbook(filename="C:\DESKTOP\INP011.xlsx", data_only=True)
-#        excel_file = request.FILES['excel_file']
-#        wb = load_workbook(excel_file, data_only=True)
+#        wb = load_workbook(filename="C:\DESKTOP\INP011.xlsx", data_only=True)
+        excel_file = request.FILES['excel_file']
+        wb = load_workbook(excel_file, data_only=True)
         ws = wb["DATA"]
         for y in range(2, 700): #READ INPUT DATA A
             A[ws.cell(row=y, column=2).value] = (ws.cell(row=y, column=5).value)
@@ -75,7 +77,7 @@ def NullVar():
     C0=[] #INTERMEDIATE SUM|MED...
     B=[0]*100 #INTERMEDIATE CONST
     D=[] #DISTRIBUTIONS FOR MONTE_CARLO
-    D1=[[0]*6]*1000 #MONTE_CARLO_RESULT
+    #D1=[[0]*10]*1000 #MONTE_CARLO_RESULT
     count1 = []
     count2 = []
     bins1=[]
@@ -300,13 +302,15 @@ def Generator():
             for y in range(0,1000):
                 TEMP[y]=G[x]['AVG']*TEMP[y]
             D.append(TEMP)
+        else:
+            D.append([0]*1000)
 
 def MonteCarlo():
     TEMP = []
     TEMP1 = 0
+    STEP=0
 
-
-    for y in range(0, 10):  # return values to data
+    for y in range(0, 10):  # store values to temp
         if G[y]['ID'] > 0:
             G[y]["STORE"] = A[G[y]['ID']]
 
@@ -314,38 +318,37 @@ def MonteCarlo():
         for y in range(0, 10):  # Monte-carlo function
             if G[y]['ID'] > 0:
                 A[G[y]['ID']] = D[y][x]
-                D1[x][y] = A[G[y]['ID']]
+                # D1[x][y] = A[G[y]['ID']] ??????????????? WTF7
         MainCalc()
-        TEMP.append(B[3])
-    for x in range(0, 998):  # probability calculation
-        if TEMP[x] > 0:
-            TEMP1 = TEMP1 + 1
-    B[32] = TEMP1 / 999 * 100
+        TEMP.append(B[28])
 
     for y in range(0, 10):  # return values to data
         if G[y]['ID'] > 0:
             A[G[y]['ID']] = G[y]["STORE"]
     MainCalc()
+    TEMP.sort()
+    # D.append(TEMP) #service check
 
-    # GISTOGRAMM
-    # TEMP[0]=TEMP[4]
-    # TEMP[1]=TEMP[4]
-    count, bins, ignored = plt.hist(TEMP, 25, density=True)
+    for x in range(0, 998):  # probability calculation
+        if TEMP[x] > 0:
+            B[32] = x / 999 * 100
+            x=1000
 
-#    plt.show()
+    STEP=(TEMP[950]-TEMP[50])/24 #HYSTOGRAMM SYBUNIT
+    y=0
+    xo=0
+    for x in range(50, 950):
+            if TEMP[x] > (STEP*y+TEMP[50]):
+                bins1.append(round(y*STEP/1000,0))
+                y=y+1
+                if TEMP[x]>0:
+                    count1.append(x-xo)
+                    count2.append(0)
+                else:
+                    count2.append(x-xo)
+                    count1.append(0)
+                xo=x
 
-    for el in count:
-        if el > 0:
-            count1.append(el)
-        else:
-            count1.append(0)
-        if el <= 0:
-            count2.append(el)
-        else:
-            count2.append(0)
-    for el in bins:
-        if el > 0:
-            bins1.append(round(el/1000,0))
 
 def OUTPUT():
     n.update({
@@ -482,7 +485,8 @@ def OUTPUT():
         'N344': count2,
         'N345': bins1,
         'N346': A[10],
-        'N347': A[261]+A[262]+A[263]+'...',
+        #'N347': A[261]+A[262]+A[263]+'...',
+        'N347': D,
         'N349': G
 
     })
