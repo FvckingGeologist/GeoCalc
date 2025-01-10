@@ -1,0 +1,1787 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:GreekC;
+	panose-1:0 0 4 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+p.a, li.a, div.a
+	{mso-style-name:Тек_таб;
+	mso-style-link:"Тек_таб Знак";
+	margin:0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+span.a0
+	{mso-style-name:"Тек_таб Знак";
+	mso-style-link:Тек_таб;
+	font-family:"Times New Roman",serif;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=RU link="#0563C1" vlink="#954F72" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'>В данном разделе
+кратко приведен пример по заполнению таблицы исходных данных и правильному
+подбору необходимых численных значений. Эта процедура при использовании данного
+калькулятора является наиболее трудоемкой.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Прежде всего
+необходимо скачать файл с формой исходных данных:</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=623
+height=155 id="Рисунок 13" src="method.files/image001.jpg"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Ввод данных через
+форму в виде листа электронной таблицы призван облегчить процедуру заполнения
+исходных данных, а также позволяет многократно использовать одну и ту-же форму
+при постоянных корректировках расчетов.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>При выполнении
+экспресс экономического расчета проекта наибольшее значение имеет правильный
+подбор нормативов. Анализ некоторого количества проектов разработки
+месторождений, выполненных за последние 10-15 лет позволяет приближенно оценить
+затраты на базе проектных значений. Данные о фактических результатах и
+фактически понесенных затратах, к сожалению, собрать и проанализировать
+затруднительно. Далее, основные нормативные показатели будут оговорены на
+примере заполнения формы исходных данных.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Применяемая методика
+вычислений схожа с применяемой при разработке документов:</p>
+
+<p class=MsoNormal align=center style='text-align:center'>- ТЭО кондиций</p>
+
+<p class=MsoNormal align=center style='text-align:center'>- ТЭО КИН</p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>1. Геологическая
+характеристика объекта</b></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Следует понимать, что
+геологический объект может быть рассредоточен на множество рудных тел или даже
+полей. В данном случае рекомендуется произвести суммирование и усреднение
+данных по геол. объекту – при этом не должны существенно поменяться возможные
+объемы геологоразведочных, горных работ.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Геологический объект
+в модели описывается следующим образом – геологические запасы равняются
+произведению нескольких переменных параметров и констант.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Таблица 1. Описание
+геологических запасов моделируемого объекта</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=388
+height=262 id="Рисунок 1" src="method.files/image002.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>!!! При заполнении
+форм – заполняются только поля страницы белого цвета. Имеется ограничение на
+вводимые данные – численные ограничения при вводе ряда параметров и
+ограниченный набор возможных размерностей.</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>2.
+Геологоразведочные работы</b></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Так, как модель
+предназначена для оценки проектов на ранних стадиях геологического изучения, в
+расчет затрат включаются геологоразведочные работы. Для рудных объектов
+предусмотрено введение информации об основных видах геологоразведочных работ –
+площадных геофизических работах и проходке горных выработок – канав, шурфов,
+скважин, штолен и т.п. В модели объем каждого вида работ рассчитывается к
+площади рудоносности. Затраты на геологоразведочные работы отнесены к части
+инвестиционных (капитальных) затрат</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Кроме затрат на
+геологоразведочные работы предусмотрен учет лицензионного платежа в млн. руб.,
+который уплачивается при получении предприятием лицензии на право пользования
+недрами.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Если при реализации
+геологоразведочного проекта основным способом опробования является бурение
+скважин – допустимо оценить стоимость затрат на разведку через стоимость
+бурения скважин с повышающим коэффициентом на прочие работы – 1.1 – 1.3. В
+среднем в реализуемых госкорпорацией Росгеология геологоразведочных проектах
+стоимость всего комплекса работ, приведенная к метру бурения скважин составляет
+от 15 до 45 тыс. руб.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Если ключевой способ
+опробования – проходка канав, шурфов, подземных горных выработок (ПГВ) –
+следует привязывать стоимость проекта к объему запланированных работ данных
+категорий, в м3.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Таблица 2. Описание
+геологических запасов моделируемого объекта</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=388
+height=121 id="Рисунок 2" src="method.files/image003.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=388
+height=141 id="Рисунок 4" src="method.files/image004.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>3. Технологические
+параметры горно-добывающего предприятия</b></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Во-первых, в
+зависимости от реализуемого проекта закладываются проектные показатели
+разубоживания и потерь полезного ископаемого. Возможный диапазон, который
+принимают данные показатели на практике показан на Рис.2 и Рис.3. Также,
+значения данных показателей будут зависеть от вида сырья (например, в настоящее
+время потери для россыпного золота часто принимаются 0%, а для рудного могут
+достигать 8-20%) и способа разработки (открытый, подземный).</p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=481
+height=289 id="Рисунок 11" src="method.files/image005.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Рис.1. Соотношение
+геологических и проектных эксплуатационных запасов по проектным горным
+предприятиям</p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Математической
+моделью калькулятора предусмотрено определение эксплуатационных запасов.
+Следует учесть, что в суммарные эксплуатационные запасы будет определены только
+те запасы, которые возможно отработать с заданной производительностью в
+проектный срок отработки запасов или до горизонта расчета (25 лет).</p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Таблица 3. Раздел
+технологические параметров в модели -Потери и Разубоживание.</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=388
+height=61 id="Рисунок 5" src="method.files/image006.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=481
+height=289 id="Рисунок 6" src="method.files/image007.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Рис.2. Проектные
+коэффициенты потерь (статистика по выборке)</p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=480
+height=289 id="Рисунок 7" src="method.files/image008.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Рис.3. Проектные
+коэффициенты разубоживания (статистика по выборке)</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Также, если
+разработка месторождения планируется открытым способом (карьер), следует задать
+проектные параметры карьера (ширина бермы, высота уступа, угол откоса, Рис.4)
+или коэффициент вскрыши, в зависимости от проектного способа разработки:</p>
+
+<p class=MsoNormal align=center style='text-align:center'>А) Разработка пологопадающих
+пластов карьером (выдержанная по площади вскрыша)</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Б) Крутопадающие
+рудные тела- карьером с нарастающим коэффициентов вскрыши при разработке</p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>B</span>)
+Подземным способом</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Способ разработки
+также задается в модели. Важно отметить, что в случае А – в модель будет
+закладываться указанный в исходных данных коэффициентом вскрыши. Варианты Б и В
+рассчитываются с учетом заданной глубины разведки и параметров горных
+выработок:</p>
+
+<p class=MsoNormal align=center style='text-align:center'>- для варианта Б это
+параметры карьера</p>
+
+<p class=MsoNormal align=center style='text-align:center'>-для варианта В это
+необходимое количество горно-подготовительных работ (м3) на каждую тонну добычи</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Следует учесть, что
+коэффициент вскрыши для россыпных месторождений принято выражать в м3
+вскрыши/м3 , для рудных – м3 вскрыши/т руды. На практике (Рис.5) при разработке
+месторождений закладывают коэффициенты вскрыши не более первых единиц. В редких
+случаях, при значимой ценности сырья (например медные руды) – коэффициент
+вскрыши достигает 5-10 ед.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Таблица 4. Раздел
+технологические параметров в модели -Параметры карьера</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=388
+height=161 id="Рисунок 8" src="method.files/image009.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=440
+height=231 id="Рисунок 9" src="method.files/image010.jpg"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Рис.4. Поперечное
+сечение карьера – основные параметры</p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:10.0pt;line-height:107%;font-family:GreekC'>n</span>– углы
+откоса уступов, <span lang=EN-US>MN</span><span lang=EN-US> </span>– предохранительная
+берма, <span style='font-size:10.0pt;line-height:107%;font-family:GreekC'>a</span><span
+style='font-size:10.0pt;line-height:107%;font-family:"Cambria",serif'>, </span><span
+style='font-size:10.0pt;line-height:107%;font-family:GreekC'>b </span><span
+style='font-size:10.0pt;line-height:107%;font-family:"Times New Roman",serif'>–</span><span
+style='font-size:10.0pt;line-height:107%;font-family:GreekC'> </span>углы
+погашения бортов карьера</p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=481
+height=289 id="Рисунок 14" src="method.files/image011.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Рис.5. Проектные
+коэффициенты вскрыши (статистика по выборке)</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Важным
+технологическим показателем является определение производительности предприятия
+по руде. Как правило, при определении годовой производительности предприятия в
+отечественной практике принято руководствоваться формулами  Тейлора:</p>
+
+<p class=MsoNormal align=center style='text-align:center'>А) Срок обеспеченности
+горного предприятия по руде определяется по формуле:</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Т=0.2*А^0.25</p>
+
+<p class=MsoNormal align=center style='text-align:center'>где:</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Т – срок
+обеспеченности предприятия, лет</p>
+
+<p class=MsoNormal align=center style='text-align:center'>А – геологические
+запасы руды, т</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Соответствующая
+производительность по руде определяется путем деления запасов А на срок
+обеспеченности – Т.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>В некоторых случаях
+производительность по руде целесообразно задавать в зависимости от имеющейся
+потребности обогатительного производства или имеющегося потенциала
+горно-добычного оборудования (для мелких россыпных месторождений целесообразно
+ориентировать предприятие на 1-2 сезона).</p>
+
+<p class=MsoNormal align=center style='text-align:center'>В случае, если
+технологическая схема предприятие предполагает откатку вскрыши или откатку руды
+на длительное расстояние при производстве работ – целесообразно указать плечо
+откатки вскрыши и плечо откатки руды. В общем случае, при высоком уровне
+неопределенности – рекомендуется этими показателями пренебречь (принять
+значения – 0, 0)</p>
+
+<p class=MsoNormal align=center style='text-align:center'>В преддверии начала
+добычи руды производится комплекс горно-подготовительных работ, включающих
+обустройство, проходку вскрышных траншей, подготовительных подземных выработок
+и т.п., обеспечивающих подготовку первых блоков руды к добыче. В модели объем
+горно-подготовительных работ задается путем задания времени – лет. В этот
+период предприятие производит только вскрышные работы (производительность х
+увеличивающий коэффициент).</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Таблица 5. Раздел
+технологические параметров в модели -производительность</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=388
+height=41 id="Рисунок 10" src="method.files/image012.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=481
+height=289 id="Рисунок 12" src="method.files/image013.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Рис.6. Проектная
+обеспеченность запасами (статистика по выборке)</p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=481
+height=289 id="Рисунок 26" src="method.files/image014.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Рис.6. Соответствие
+проектных мощностей формуле Тейлора (статистика)</p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>4. Обогащение руды
+и глубокая переработка</b></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Модель предполагает
+двухступенчатую переработку руды:</p>
+
+<p class=MsoNormal align=center style='text-align:center'>А) Переработка руды,
+как правило на месте с получением концентрата</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Б) Транспортировка
+концентрата на перерабатывающее производство с получением продуктов высокого
+передела – например, чистых металлов.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Для расчета по данным
+стадиям в модели предполагается заполнение таблиц (Таблица 6 и Таблица 7).</p>
+
+<p class=MsoNormal align=center style='text-align:center'>В первую таблицу
+вписываются товарные продукты первичного передела (концентраты) –
+рассчитывается выход концентратов в д.ед. от перерабатываемой руды. В модели
+данные Таблицы 6 используются для оценки затрат на первичную переработку и
+транспортировку концентратов до перерабатывающего предприятия вторичной
+переработки. !!!!Выручка от продажи товарной продукции по данным этой таблицы
+не определяется!!!!</p>
+
+<p class=MsoNormal align=center style='text-align:center'>В таблицу 7 заносится
+выход товарной продукции, с учетом потерь на всех стадиях передела из руды – в
+пересчете на 1000т руды из целика (без учета разубоживания).  Если товарной
+продукцией является продукт первичного передела, то аналогично – указывается
+его выход из 1000т руды (или 1000м3 для россыпей).</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>&nbsp;</b></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Таблица 6. Раздел
+данных по первичному переделу</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=388
+height=121 id="Рисунок 16" src="method.files/image015.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Таблица 7. Раздел
+данных по вторичному переделу и стоимости товарной продукции</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=388
+height=61 id="Рисунок 17" src="method.files/image016.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=388
+height=81 id="Рисунок 18" src="method.files/image017.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Также, для каждого
+вида товарной продукции из таблицы 7 указывается рыночная стоимость – текущая
+или перспективная прогнозная. Рекомендуется стоимость товарной продукции
+определять к настоящему моменту на основе усреднения рыночных стоимостей за
+период 3-10 лет в зависимости от проектной продолжительности проекта и
+особенностей ценообразования. Анализ рыночных стоимостей может быть заимствован
+из Госдоклада РФ о состоянии МСБ - <a
+href="https://vims-geo.ru/ru/activity/iacn/russia/gosdokladi/">https://vims-geo.ru/ru/activity/iacn/russia/gosdokladi/</a>.</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>5. Инвестиционные
+затраты</b></p>
+
+<p class=MsoNormal align=center style='text-align:center'>После того, как
+определены технические и организационные стороны моделирования горно-добычного
+предприятия – производится моделирование затрат. Первоначальные инвестиционные
+затраты будут включать:</p>
+
+<p class=MsoNormal align=center style='text-align:center'>-  затраты на ГРР
+(оговорены выше)</p>
+
+<p class=MsoNormal align=center style='text-align:center'>- строительство
+объектов инфраструктуры – внутренних и внешних</p>
+
+<p class=MsoNormal align=center style='text-align:center'>-
+горно-подготовительные работы</p>
+
+<p class=MsoNormal align=center style='text-align:center'>- строительство
+горно-добывающего предприятия (предполагается инвестиции в оборудование
+карьера, шахты)</p>
+
+<p class=MsoNormal align=center style='text-align:center'>- строительство
+обогатительного предприятия</p>
+
+<p class=MsoNormal align=center style='text-align:center'>- инвестиции в
+транспортный цех</p>
+
+<p class=MsoNormal align=center style='text-align:center'>- общехозяйственные
+расходы</p>
+
+<p class=MsoNormal align=center style='text-align:center'>- оборотный капитал</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Данные разделы затрат
+при приближенном моделировании удобно привязывать к проектной
+производительности горного предприятия по руде. В общем виде затраты
+проанализированы на Рис.9, без разделения по категориям. Усредненная структура
+затрат показана на Рис.10.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>В расчетной модели
+инвестиционные затраты распределяются равномерно на этапе
+горно-подготовительных работ. Смысл такого подхода в следующем – строительство
+основных объектов инфраструктуры и обогатительных производств становится
+возможным одновременно с первоначальными горными работами. Подготовка первых
+вскрышных блоков, завершение строительства объектов инфраструктуры и
+обогатительного производства соответствует переходу рудника от этапа
+строительства к эксплуатации.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Если рассчитать
+затраты по категориям затруднительно, возможно применить единый показатель
+инвестиционных затрат, который может быть отнесен к одной из категорий,
+например к инвестициям в горно-добывающее предприятие. При этом искажение
+расчета не произойдет.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Кроме первоначальных
+инвестиционных затрат предусматриваются инвестиционные затраты на восполнение
+выбывающих производственных мощностей. В данной модели восполнение мощностей
+рассчитывается в долях от общих инвестиционных затрат (Рис.11). Кроме того,
+предусматриваются затраты на ликвидацию горного предприятия, рассчитываемые
+аналогично – в долях от первоначальных инвестиционных затрат.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>При ликвидации
+предприятия возможна ситуация, когда часть оборудования и комплексов остается
+ликвидной – может быть реализована по остаточной стоимости или-передана на
+другой объект (например при отработке мелких россыпных месторождений золота
+весь добывающий комплекс может быть использован на последующих объектах без
+видимых затруднений – т.е. имущество предприятия остается ликвидным на 100%).
+Для учета остаточной стоимости предусмотрен коэффициент возврата (Табл.7). При
+динамическом расчете по годам остаточная стоимость оборудования динамически
+пересчитывается каждый год в зависимости от затрат на восполнение фондов и
+амортизации. Доля возврата рассчитывается от текущей рыночной стоимости.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><a
+name="_Hlk182768693">Таблица 7. Раздел – инвестиционные затраты</a></p>
+
+<p class=MsoNormal align=center style='text-align:center'><img border=0
+width=388 height=301 id="Рисунок 21" src="method.files/image018.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img border=0
+width=481 height=289 id="Рисунок 23" src="method.files/image019.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Рис.7. Удельные
+кап.затраты (статистика)</p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img border=0
+width=485 height=289 id="Рисунок 24" src="method.files/image020.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Рис.8. Удельные
+себестоимость горных работ, руб/т (статистика)</p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img border=0
+width=481 height=289 id="Рисунок 25" src="method.files/image021.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Рис.9. Удельные кап.
+затраты в зависимости от производительности рудника</p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img border=0
+width=505 height=296 id="Рисунок 30" src="method.files/image022.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Рис.10. Структура
+капитальных затрат (усредненно, без ГРР)</p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img border=0
+width=481 height=289 id="Рисунок 28" src="method.files/image023.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Рис.11. Доля
+поддерживающих затрат в общих кап.вложениях (статистика)</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>&nbsp;</b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>6. Текущие
+(операционные) затраты</b></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Текущие затраты в
+модели калькулятора распределены по производственным комплексам:</p>
+
+<p class=MsoNormal align=center style='text-align:center'>- затраты на добычу
+руды и вскрышу;</p>
+
+<p class=MsoNormal align=center style='text-align:center'>- затраты на
+транспорт руды и вскрыши (применяются в том случае если отвал или
+обогатительная фабрика расположены на удалении от карьера/рудника);</p>
+
+<p class=MsoNormal align=center style='text-align:center'>- затраты на
+обогащение и транспортировку концентрата до площадки реализации или последующей
+переработки;</p>
+
+<p class=MsoNormal align=center style='text-align:center'>- затраты на глубокую
+переработку концентратов (как правило - наиболее неопределенная и сложная
+составляющая затрат, определяемая методом аналогии);</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Также предусмотрены
+общие затраты на предприятие, управленческие и прочие затраты, определяемые в
+долях к сумме прочих текущих затрат.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Текущие затраты, в
+отличии от инвестиционных, рассчитываются на единицу добываемой руды в год, а
+не на единицу годовой производительности, как инвестиционные затраты.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Затраты на добычу
+руды и горной массы могут быть приближенно определены из графика на рис. 12,
+который демонстрирует, что стоимость добычи руды на различных открытых рудниках
+схожа.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Затраты на первичное
+обогащение составляют, как правило от нескольких сотен рублей до 10 тыс. для
+труднообогатимых и ценных руд на каждую тонну руды.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Затраты на глубокую
+переработку, правильнее рассчитывать на единицу товарной продукции. Расчет
+переработки на тонну исходной руды может быть сильно искажен в зависимости от
+качества руд и многих других факторов, однако в данном калькуляторе применен этот
+подход во избежание создания излишней путаницы.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Удельные затраты на
+автотранспорт рассчитываются на тонну-километр и на сегодняшний день могут
+составлять 4-10 руб/т*км. Для расчета затрат на транспортировку по железной
+дороге следует использовать калькулятор железных дорог: - <a
+href="https://cargolk.rzd.ru/services/calculator">https://cargolk.rzd.ru/services/calculator</a>.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Таблица 8. Раздел –
+Текущие (операционные) затраты</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img border=0
+width=388 height=241 id="Рисунок 22" src="method.files/image024.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img border=0
+width=485 height=289 id="Рисунок 29" src="method.files/image025.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Рис.12. Стоимость
+горно-добычных работ в зависимости от производительности.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>7. Налоги</b></p>
+
+<p class=MsoNormal align=center style='text-align:center'>В калькуляторе
+реализуется принцип упрощенных приближенных вычислений и вынесены в расчет
+только ключевые налоги, ставка которых существенно влияет на реализацию
+проекта, а именно – налог на прибыль, налог на имущество и НДПИ (Табл.9).
+Прочие налоги и сборы следует отнести к категории «прочие налоги». Ставки
+налога НДПИ приведены в табл. 10. Кроме того, к ставке НДПИ может быть
+применены льготы и коэффициенты, значение которых зависит от вида основного ПИ,
+попутных ПИ и региона. Уточнить ставку НДПИ можно в соответствии с налоговым
+кодексом РФ.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Таблица 9. Раздел – Налоги</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img border=0
+width=388 height=161 id="Рисунок 31" src="method.files/image026.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Таблица 10. Действующие
+ставки НДПИ</p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  background:#4472C4;padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'><b>№</b></p>
+  </td>
+  <td width="27%" nowrap style='width:27.74%;border:solid windowtext 1.0pt;
+  border-left:none;background:#4472C4;padding:.75pt .75pt 0cm .75pt;height:
+  1.0pt'>
+  <p class=a align=center style='text-align:center'><b><span style='color:black'>Группа</span></b></p>
+  </td>
+  <td width="27%" nowrap style='width:27.3%;border:solid windowtext 1.0pt;
+  border-left:none;background:#4472C4;padding:.75pt .75pt 0cm .75pt;height:
+  1.0pt'>
+  <p class=a align=center style='text-align:center'><b><span style='color:black'>ПИ</span></b></p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border:solid windowtext 1.0pt;
+  border-left:none;background:#4472C4;padding:.75pt .75pt 0cm .75pt;height:
+  1.0pt'>
+  <p class=a align=center style='text-align:center'><b><span style='color:black'>Налоговая
+  база</span></b></p>
+  </td>
+  <td width="18%" nowrap style='width:18.2%;border:solid windowtext 1.0pt;
+  border-left:none;background:#4472C4;padding:.75pt .75pt 0cm .75pt;height:
+  1.0pt'>
+  <p class=a align=center style='text-align:center'><b><span style='color:black'>Ставка
+  налога*</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;background:#B4C6E7;padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'><span style='color:black'>1)</span></p>
+  </td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#B4C6E7;padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'><span style='color:black'>горючие
+  сланцы</span></p>
+  </td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#B4C6E7;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#B4C6E7;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#B4C6E7;padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'><span style='color:black'>4%</span></p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="100%" nowrap colspan=5 style='width:100.0%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>1.1.) уголь</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>количество добытых ПИ</p>
+  </td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>антрацит;</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>количество добытых ПИ</p>
+  </td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>47 руб/ тн</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>уголь коксующийся;</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>количество добытых ПИ</p>
+  </td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>1 руб/тн</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>уголь бурый;</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>количество добытых ПИ</p>
+  </td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>11 руб/тн</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>уголь, за исключением
+  антрацита, угля коксующегося и угля бурого;</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>количество добытых ПИ</p>
+  </td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>24 руб/тн</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;background:#B4C6E7;padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'><span style='color:black'>2)</span></p>
+  </td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#B4C6E7;padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'><span style='color:black'>торф;</span></p>
+  </td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#B4C6E7;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#B4C6E7;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#B4C6E7;padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'><span style='color:black'>4%</span></p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;background:#B4C6E7;padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'><span style='color:black'>3)</span></p>
+  </td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#B4C6E7;padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'><span style='color:black'>товарные
+  руды</span></p>
+  </td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#B4C6E7;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#B4C6E7;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#B4C6E7;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="100%" nowrap colspan=5 style='width:100.0%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>3.1) черных металлов</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>железные руды</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>количество добытых ПИ</p>
+  </td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>1 руб за 1 тн</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>кондиционных руд черных
+  металлов, за исключением железной руды (не включая окисленные железистые
+  кварциты)</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>стоимость добытых ПИ</p>
+  </td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>4.80%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>марганец</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>8.00%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>хром</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>8.00%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="100%" nowrap colspan=5 style='width:100.0%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>3.2) цветные металлы</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>алюминий</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>8.00%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>медь</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>8.00%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>никель</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>8.00%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>кобальт</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>8.00%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>свинец</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>8.00%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>цинк</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>8.00%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>олово</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>8.00%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>вольфрам</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>8.00%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>молибден</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>8.00%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>сурьма</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>8.00%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>ртуть</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>8.00%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>магний</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>8.00%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>и др.</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>8.00%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="100%" nowrap colspan=5 style='width:100.0%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>3.3) редких металлов</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>литий</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>4.80%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>рубидий</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>4.80%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>цезий</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>4.80%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>бериллий</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>4.80%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>стронций</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>4.80%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>кадмий</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>4.80%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>скандий</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>4.80%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="100%" nowrap colspan=5 style='width:100.0%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>3.4) редкоземельные металлы</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>иттрий</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>4.80%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>лантаноиды (лантан, церий, празеодим,
+  неодим, самарий, европий, гадолиний, тербий, диспрозий, гольмий, эрбий,
+  тулий, иттербий, лютеций)</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>4.80%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="100%" nowrap colspan=5 style='width:100.0%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>3.5) образующих собственные
+  месторождения, в которых редкие металлы являются основными компонентами</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>индий</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>4.80%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>таллий</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>4.80%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>галлий</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>4.80%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>титан</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>4.80%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>германий</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>4.80%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>цирконий</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>4.80%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>гафний</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>4.80%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>ванадий</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>4.80%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>ниобий</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>4.80%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>тантал</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>4.80%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>висмут</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>4.80%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>селен</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>4.80%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>теллур</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>4.80%</p>
+  </td>
+ </tr>
+ <tr style='height:1.0pt'>
+  <td width="4%" nowrap style='width:4.02%;border:solid windowtext 1.0pt;
+  border-top:none;padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="27%" nowrap style='width:27.3%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>рений</p>
+  </td>
+  <td width="22%" nowrap style='width:22.74%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'></td>
+  <td width="18%" nowrap style='width:18.2%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.75pt .75pt 0cm .75pt;height:1.0pt'>
+  <p class=a align=center style='text-align:center'>4.80%</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='color:white'>* Ставка налога может умножаться на </span>коэффициент
+ренты – Кр, который в данной таблице не приведен и может быть уточнен в
+налоговом кодексе РФ.</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>8. Основные
+экономические параметры моделирования</b></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Экономический расчет
+в модели калькулятора производится методом дисконтированных денежных потоков.
+Коэффициент дисконтирования задается в таблице исходных данных (Таблица 11).
+Рекомендуемые значения коэффициента дисконтирования 1.05-1.10 для долгосрочных
+проектов, 1.15-1.25 для краткосрочных высокорентабельных проектов. Конечно,
+закладываемый коэффициент дисконтирования должен в первую очередь учитывать
+экономическую тенденцию текущего развития.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Кроме коэффициента
+дисконтирования в модели предусмотрено применение повышающих коэффициентов
+(мультипликаторов) к ценам товарной продукции, капитальным и операционным
+затратам. (Табл.11).</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Предельный горизонт
+расчета может быть увеличен с 25 лет по умолчанию до 50-100 лет. Как правило,
+долговременные расчеты лишены смысла при оценке потенциальной рентабельности
+геологического проекта.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>В модели калькулятора
+расчет прекращается по достижении расчетом предельного срока – 25 лет или по
+окончании балансовых запасов для разработки.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Таблица 11. Раздел – Основные
+экономические показатели</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img border=0
+width=388 height=121 id="Рисунок 32" src="method.files/image027.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>9. Стохастическое
+моделирование</b></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Кроме выполнения экономического
+расчета для некоторых определенных условий (детерминированный расчет) в
+калькуляторе реализован алгоритм стохастического моделирования методом
+Монте-Карло. Суть метода в следующем: - за основу берется предположение, что
+ряд факторов влияющих на реализацию проекта не предопределен, а на самом деле
+может иметь в будущем некоторое неопределённое значение, которое может быть
+определено в каком-то заданном диапазоне с заданной закономерностью (на самом
+деле в любом долгосрочном проекте все так и есть) – например рыночная цена на
+товарную продукцию – на базе тренда можно предсказать ее среднее значение,
+отклонения и вероятность отклонений. Также, это могут быть ожидаемые запасы,
+содержания полезных компонентов в руде, затраты и т.п.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>В калькуляторе можно
+выделить до 10 таких неопределенных факторов из перечня, задать характер
+распределения и предельные значения для каждого фактора (Таблица 11).</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Таблица 11. Раздел – Основные
+данные для стохастического моделирования</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img border=0
+width=623 height=169 id="Рисунок 3" src="method.files/image028.jpg"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Результатом расчета
+по сценарию с неопределенными значениями целого комплекса параметров являются –
+закон распределения вероятного <span lang=EN-US>NPV</span><span lang=EN-US> </span>–
+чистого дисконтированного дохода и вероятность успешной реализации проекта –
+это доля экономически успешных реализаций модели к общему числу итераций моделирования.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>В калькуляторе
+реализуется 1000 итераций моделирования, что обеспечивает достаточную точность
+вычислений.</p>
+
+<p class=MsoNormal align=center style='text-align:center'>После подготовки
+файла исходных следует сохранить введенные данные и загрузить файл на странице
+калькулятора. После успешной загрузки нажать кнопку – «<span lang=EN-US>Run
+GeoCalc</span>»</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img border=0
+width=563 height=320 id="Рисунок 15" src="method.files/image029.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>Отчет</b></p>
+
+<p class=MsoNormal align=center style='text-align:center'>В результате
+моделирования по предварительно заданному сценарию будет сгенерирован отчет
+нижеследующего вида</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img border=0
+width=827 height=852 id="Рисунок 19" src="method.files/image030.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>Методика</b></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Методика выполняемой
+оценки максимально соответствует рекомендациям, изложенным в следующих документах:</p>
+
+<p class=MsoNormal align=center style='text-align:center'>1) Методическими
+рекомендациями по оценке эффективности инвестиционных проектов… Утв.
+Минэкономики РФ, Минфином РФ и Госстроем РФ от 21.06.1999г № ВК 477</p>
+
+<p class=MsoNormal align=center style='text-align:center'>2) МЕТОДИЧЕСКИЕ
+РЕКОМЕНДАЦИИ по технико-экономическому обоснованию кондиций для подсчета запасов
+месторождений твердых полезных ископаемых  (кроме углей и горючих сланцев) - Москва,
+2007</p>
+
+<p class=MsoNormal align=center style='text-align:center'>3) Методическими
+указаниями по подготовке стратегического и комплексного обоснований
+инвестпроекта… Утв. Минэкономразвития РФ от 14.12.2013г., № 741</p>
+
+</div>
+
+</body>
+
+</html>
