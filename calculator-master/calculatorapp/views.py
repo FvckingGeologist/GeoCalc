@@ -1,11 +1,15 @@
 from itertools import count
+from typing import List
 
 from django.shortcuts import render
 from openpyxl import load_workbook
+from django.shortcuts import render
+from django.http import HttpResponse
 from .models import InData2
 import numpy as np
-import matplotlib.pyplot as plt
-import numpy_financial as npf
+from django.contrib.staticfiles.storage import staticfiles_storage
+#import matplotlib.pyplot as plt
+#import numpy_financial as npf
 
 
 def home(request):
@@ -15,10 +19,16 @@ def index(request):
 
 def geocalc(request):
     NullVar()
-    global excel_file
+
     if request.method == 'POST':
 #        wb = load_workbook(filename="C:\DESKTOP\INP011.xlsx", data_only=True)
+        global excel_file
         excel_file = request.FILES['excel_file']
+        allowed_extensions = ['xls', 'xlsx']  # Allowed file types
+        max_file_size =  256 * 1024  # 2 MB
+        file_extension = excel_file.name.split('.')[-1].lower()
+        if file_extension not in allowed_extensions:
+            return HttpResponse("Invalid file type. Allowed types: jpg, jpeg, png, pdf.")
         wb = load_workbook(excel_file, data_only=True)
         ws = wb["DATA"]
         for y in range(2, 700): #READ INPUT DATA A
@@ -27,9 +37,12 @@ def geocalc(request):
             TEMP = {"ID": A[321 + x], "NAME": A[331 + x], "DIM": A[341 + x], "TYPE": A[351 + x], "AVG": A[361 + x],
                     "DEV": A[371 + x], "FROM": A[381 + x], "TO": A[391 + x], "DISP": A[401 + x], "STORE": 0}
             G.append(TEMP)
+        MainCalc()
         Generator()
         MonteCarlo()
+        sensiv()
         OUTPUT()
+        Save_XLS()
         RecDATA()
         return render(request, 'report.html', context=n)
 
@@ -48,24 +61,30 @@ def help(request):
     return render(request, 'help.html')
 
 def map(request):
+
     return render(request, 'map.html')
 
-def report1(request):
-    wb = load_workbook(filename="C:\DESKTOP\SAMPLE.xlsx", data_only=True)
+def report1(request,item_id):
+    wb = load_workbook(filename=(staticfiles_storage.path("out"+str(item_id)+".xlsx")), data_only=True)
+    #wb = load_workbook(filename="out"+str(item_id)+".xlsx", data_only=True)
     ws = wb.active
-    n = {}
+    n={}
     for y in range(1, 401):
-        b = ws.cell(row=y, column=2).value
+        n.update({
+            ws.cell(row=y, column=1).value: ws.cell(row=y, column=2).value
+        })
         if ws.cell(row=y, column=3).value is None:
             pass
         else:
-            b = [ws.cell(row=y, column=2).value]
-        for x in range(3, 30):
-            if ws.cell(row=y, column=x).value is None:
-                pass
-            else:
-                b.append(ws.cell(row=y, column=x).value)
-        n[ws.cell(row=y, column=1).value] = b
+            b = []
+            for x in range(3, 28):
+                if ws.cell(row=y, column=x).value is None:
+                    pass
+                else:
+                    b.append(ws.cell(row=y, column=x).value)
+            n.update({
+                ws.cell(row=y, column=1).value: b
+            })
     return render(request, 'report.html', context=n)
 
 def NullVar():
@@ -77,7 +96,7 @@ def NullVar():
     C0=[] #INTERMEDIATE SUM|MED...
     B=[0]*100 #INTERMEDIATE CONST
     D=[] #DISTRIBUTIONS FOR MONTE_CARLO
-    #D1=[[0]*10]*1000 #MONTE_CARLO_RESULT
+    D1=[] #MONTE_CARLO_RESULT
     count1 = []
     count2 = []
     bins1=[]
@@ -94,8 +113,10 @@ def MainCalc():  # MAIN PART MAIN MAIN MAIN
     if (B[15] + A[26] + A[36] + 1) > A[144]:  # !!!!!!!!!!!!!!!!
         B[15] = A[144] - A[26] - A[36]  # !!!!!!!!!!!!!!!
     tem5 = A[26] + A[36] + 1 + B[15]
-    B[16] = (B[15] - 1) * A[31] / B[3]  # PART OF MINED RESERVES
-
+    if B[3]>0:
+        B[16] = (B[15] - 1) * A[31] / B[3]  # PART OF MINED RESERVES
+    else:
+        B[16]=0
     # EMTY MATRIX GENERATOR
     global C
     C = [[0 for col in range(tem5)] for row in range(150)]
@@ -152,9 +173,9 @@ def MainCalc():  # MAIN PART MAIN MAIN MAIN
     for x in range(tem4, tem5):
         for y in range(0, 9):  # for each component
             C[12 + y][x] = A[21]*A[11 + y] * C[10][x] / 100  # component 1 in geol
-            C[24 + y][x] = A[12 + y] * C[22][x] / 100 / (1 + A[29] / 100)  # component in exp
-            C[35 + y][x] = A[41 + y] * C[22][x]  # STAGE 1
-            C[46 + y][x] = A[151 + y] * C[22][x]/A[51]
+            C[24 + y][x] = A[21]*A[12 + y] * C[22][x] / 100 / (1 + A[29] / 100)  # component in exp
+            C[35 + y][x] = A[21]*A[41 + y] * C[22][x]  # STAGE 1
+            C[46 + y][x] = A[21]*A[151 + y] * C[22][x]/A[51]
             C[57 + y][x] = A[112 + y] * C[46 + y][x] * A[147] / 1000  # PRODUCTS_PROCEEDS
             C[34][x] = C[34][x] + C[35 + y][x]  # SUMM1
             # C[45][x]=C[45][x]+C[46+y][x] NOT RECOMEND TO USE
@@ -289,26 +310,40 @@ def MainCalc():  # MAIN PART MAIN MAIN MAIN
     # CFLOW.clear
     for x in range(0, tem5):
         CFLOW.append(C[125][x])
-    B[31] = npf.irr(CFLOW)
+    B[31] = irr_bisection(CFLOW)
     B[0] = tem5
     B[39]=C0[111][1]+B[28]
 
 def Generator():
     for x in range(0,10):
-        if G[x]["TYPE"]=='Нормальное':
-            mu, sigma = 1., G[x]['DEV']/G[x]['AVG']
-            TEMP=[]
+        if (G[x]["TYPE"]=='Нормальное')&(G[x]["ID"]>=0):
+            mu, sigma = G[x]['AVG'], G[x]['DEV']/G[x]['AVG']
             TEMP=np.random.normal(mu, sigma, 1000)
-            for y in range(0,1000):
-                TEMP[y]=G[x]['AVG']*TEMP[y]
+            TEMP[np.isinf(TEMP)] = 0
+            TEMP = TEMP - G[x]['DISP']
+            if ((G[x]["TO"]-G[x]["FROM"])>0)&(G[x]["FROM"]>0):
+                TEMP[TEMP<G[x]["FROM"]] = G[x]["FROM"]
+                TEMP[TEMP > G[x]["TO"]] = G[x]["TO"]
             D.append(TEMP)
-        else:
+        if (G[x]["TYPE"]=='Логнормальное')&(G[x]["ID"]>=0):
+            mu, sigma = 1, G[x]['DEV']
+            TEMP=np.random.lognormal(mu, sigma, 1000)
+            TEMP[np.isinf(TEMP)] = 0
+            TEMP=TEMP*G[x]['AVG'] - G[x]['DISP']
+            if ((G[x]["TO"]-G[x]["FROM"])>0)&(G[x]["FROM"]>0):
+                TEMP[TEMP<G[x]["FROM"]] = G[x]["FROM"]
+                TEMP[TEMP > G[x]["TO"]] = G[x]["TO"]
+            D.append(TEMP)
+        if (G[x]["TYPE"]=='Прямоугольное')&(G[x]["ID"]>=0):
+            TEMP=np.random.uniform(G[x]['FROM'], G[x]['TO'], 1000)
+            D.append(TEMP)
+        if not((G[x]["TYPE"] == 'Нормальное')or(G[x]["TYPE"]=='Логнормальное')or(G[x]["TYPE"]=='Равномерное'))&(G[x]["ID"] >= 0):
             D.append([0]*1000)
+
 
 def MonteCarlo():
     TEMP = []
-    TEMP1 = 0
-    STEP=0
+    Z=0
 
     for y in range(0, 10):  # store values to temp
         if G[y]['ID'] > 0:
@@ -331,24 +366,69 @@ def MonteCarlo():
 
     for x in range(0, 998):  # probability calculation
         if TEMP[x] > 0:
-            B[32] = x / 999 * 100
-            x=1000
+            Z=Z+1
+        B[32] = Z / 999 * 100
+            #x=1000
+    D1.append(TEMP)
+    x,y,z = hystocarlo(TEMP)
+    global count1
+    count1=x
+    global count2
+    count2=y
+    global bins1
+    bins1=[round((x / 1000),0) for x in z]
 
-    STEP=(TEMP[950]-TEMP[50])/24 #HYSTOGRAMM SYBUNIT
+def hystocarlo(tempo):
+    tempo.sort()
+    step=(tempo[980]-tempo[20])/24 #HYSTOGRAMM SUBUNIT
     y=0
     xo=0
-    for x in range(50, 950):
-            if TEMP[x] > (STEP*y+TEMP[50]):
-                bins1.append(round(y*STEP/1000,0))
-                y=y+1
-                if TEMP[x]>0:
-                    count1.append(x-xo)
-                    count2.append(0)
-                else:
-                    count2.append(x-xo)
-                    count1.append(0)
-                xo=x
+    par1=[]
+    par2=[]
+    par3=[]
+    for x in range(1, 998):
+        if tempo[20]==tempo[980]: x=999
+        if tempo[x] > (step*y+tempo[20]):
+            par3.append(round((y*step+tempo[20]),3))
+            y=y+1
+            if tempo[x]>0:
+                par1.append(x-xo)
+                par2.append(0)
+            else:
+                par2.append(x-xo)
+                par1.append(0)
+            xo=x
+    return(par1,par2,par3)
 
+def sensiv():
+    TEMP = []
+    TEMP1 = []
+    npv=B[28]
+
+    for y in range(0, 10):  # store values to temp
+        if G[y]['ID'] > 0:
+            G[y]["STORE"] = A[G[y]['ID']]
+    for y in range(0, 10):  # Monte-carlo function
+        if G[y]['ID'] > 0:
+            A[G[y]['ID']] = G[y]["STORE"]*1.1
+            MainCalc()
+            TEMP.append((B[28]-npv)/1000)
+            A[G[y]['ID']] = G[y]["STORE"]*0.9
+            MainCalc()
+            TEMP1.append((B[28]-npv)/1000)
+            A[G[y]['ID']]=G[y]["STORE"]
+        else:
+            TEMP.append(0)
+            TEMP1.append(0)
+    for y in range(0, 10):  # return values to data
+        if G[y]['ID'] > 0:
+            A[G[y]['ID']] = G[y]["STORE"]
+    MainCalc()
+
+    global sens1
+    sens1=TEMP
+    global sens2
+    sens2=TEMP1
 
 def OUTPUT():
     n.update({
@@ -485,26 +565,30 @@ def OUTPUT():
         'N344': count2,
         'N345': bins1,
         'N346': A[10],
-        #'N347': A[261]+A[262]+A[263]+'...',
-        'N347': D,
-        'N349': G
-
+        'N347': sens1, #sensivity ++++
+        'N348': sens2, #sensivity ____
+        'N349': 0
     })
+    for x in range(0, 10):
+        a, b, c = hystocarlo(D[x])
+        n['N' + str(350 + x)] = a+b
+        n['N' + str(360 + x)] = c
+
 def RecDATA():
     if np.isnan(B[31]):
         B[31]=-1
-    InD = InData2(DESCRIPTION=A[10], NPV=B[28], IRR=B[31], PI=B[29], SE=B[39], BP=C0[111][1], RESERVES=B[2],
-                  PROD_RATE=A[31], ORE_TYPE=A[261] + A[262] + A[263])
-#    InD=InData2( DESCRIPTION=A[10], NPV=B[28], IRR=B[31], PI=B[29], SE=B[39], BP=C0[111][1], RESERVES=B[2], PROD_RATE=A[31], ORE_TYPE=A[261]+A[262]+A[263], STORE_FILE=excel_file)
+#    InD = InData2(DESCRIPTION=A[10], NPV=B[28], IRR=B[31], PI=B[29], SE=B[39], BP=C0[111][1], RESERVES=B[2],
+#                  PROD_RATE=A[31], ORE_TYPE=A[261] + A[262] + A[263])
+    InD=InData2( DESCRIPTION=A[10], NPV=B[28], IRR=B[31], PI=B[29], SE=B[39], BP=C0[111][1], RESERVES=B[2], PROD_RATE=A[31], ORE_TYPE=A[261]+A[262]+A[263], STORE_FILE=excel_file)
     InD.save()
 
 def Save_XLS():
     wb = load_workbook(excel_file, data_only=True)
     ws1 = wb["SERV1"]
     ws2 = wb["SERV2"]
+    ws3 = wb["N_VAL"]
 
     tem5 = A[26] + A[36] + 1 + B[15]
-
     for x in range(0, 145):
         for y in range(0, 4):
             ws1.cell(row=x + 2, column=y + 4).value = C0[x][y]
@@ -512,8 +596,73 @@ def Save_XLS():
             ws1.cell(row=x + 2, column=y + 8).value = C[x][y]
     for x in range(0, 49):
         ws2.cell(row=x + 2, column=4).value = B[x]
+    for x in range(0, 370):
+        ws3.cell(row=x + 2, column=1).value = x
+        f=[]
+        f=(n.get('N'+str(x)))
 
+        if f==None:
+            ws3.cell(row=x + 2, column=2).value = "NONE"
+        elif type(f) is list:
+            z=0
+            for el in f:
+                ws3.cell(row=x + 2, column=2 + z).value = el
+                z = z + 1
+                #if (type(el) is int) or (type(el) is float) or (type(el) is str):
+                #    ws3.cell(row=x + 2, column=2+z).value=el
+                #    z=z+1
+                #else:
+                #    ws3.cell(row=x + 2, column=2 + z).value = "ARRAYx2"
+
+
+        elif (type(f) is int)or(type(f) is float)or(type(f) is str):
+            ws3.cell(row=x + 2, column=2).value=f
+        else:
+            ws3.cell(row=x + 2, column=2).value = "ERROR"
+
+    #    ws3.cell(row=x + 2, column=2).value = n.get('N'+str(x))
 #    for x in range(1, 330): #Dictionary output (report form)
 #        ws2.cell(row=x + 1, column=9).value = n['N'+str(x)] ADD LIST RULE
-
     wb.save(excel_file)
+
+def npv(cash_flows, rate):
+    """
+    Calculate the Net Present Value (NPV) given a series of cash flows and a discount rate.
+    """
+    return sum(c / (1 + rate)**i for i, c in enumerate(cash_flows))
+
+def irr_bisection(cash_flows, low_rate=0.0, high_rate=1.0, tol=1e-6, max_iter=100):
+    """
+    Calculate the Internal Rate of Return (IRR) using the bisection method.
+    - cash_flows: List of cash flows, where the first element is the initial investment (negative).
+    - low_rate: The lower bound of the rate (default: 0.0).
+    - high_rate: The upper bound of the rate (default: 1.0).
+    - tol: The tolerance level for convergence (default: 1e-6).
+    - max_iter: Maximum number of iterations (default: 100).
+    """
+    # Ensure that the NPV at low_rate and high_rate have opposite signs
+    npv_low = npv(cash_flows, low_rate)
+    npv_high = npv(cash_flows, high_rate)
+
+    if npv_low * npv_high > 0:
+        #raise ValueError("The NPV at the low and high rates must have opposite signs.")
+        return -100
+
+    # Bisection method to find the root (IRR)
+    for _ in range(max_iter):
+        mid_rate = (low_rate + high_rate) / 2
+        npv_mid = npv(cash_flows, mid_rate)
+
+        if abs(npv_mid) < tol:  # Convergence criterion
+            return mid_rate
+
+        if npv_low * npv_mid < 0:
+            high_rate = mid_rate  # Root is in the lower half
+            npv_high = npv_mid
+        else:
+            low_rate = mid_rate  # Root is in the upper half
+            npv_low = npv_mid
+
+    # If we exceed max iterations, return the midpoint as the best approximation
+    return (low_rate + high_rate) / 2
+

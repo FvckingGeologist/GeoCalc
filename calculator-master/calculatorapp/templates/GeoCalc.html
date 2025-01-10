@@ -12,31 +12,53 @@
 {% block li6 %}  {% endblock %}
 
 {% block content %}
+    <center><h1>Страница работы с калькулятором</h1></center>
+    <p>Калькулятор выполняет расчет с использованием детального шаблона исходных данных, заполняемого в формате листа электронных таблиц xlsx. Скачать подходящий шаблон можно ниже на странице (выбрать необходимый шаблон данных для расчет, заполнить его и загрузить для расчета). В каждый шаблон уже внесены данные для примера. Использование шаблонов позволит вам сохранить ваш набор данных для расчета, чтобы не вводить все данные повторно. Также, на базе данных Примера можно опробовать расчетный механизм калькулятора</p>
+    <p>Разъяснения по структруе данных приведены на листе <a href="../method/" >"Методика оценки"</a>></p>
     <center><h2>Зашрузите файл исходных данных для расcчета</h2></center>
-    <center><h3>(шаблон для заполнения скачайте ниже)</h3></center>
+    <center><h3>(!!!шаблон для заполнения скачайте ниже!!!)</h3></center>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <center><input type="file" name="excel_file"></center>
+    <center><h2><input type="file" name="excel_file"></h2></center>
     <br>
-    <center><img class="calcr" src="../static/calc.jpg"></center>
-    <center><button type="submit">Run GeoCalc</button></center>
+    <center><button type="submit"><h3><p>Запустить калькулятор</p></h3><img class="calcr" src="../static/geocalc/calc.png" /></button></center>
+
+
+
 </form>
 <br><br><br>
 
-<center><h2>Шалоны исходных данных для различных вариантов расчета: "</h2>
-    <img src="../static/oredeposit.jpg" alt="W3Schools" width=60% >
-    <br>
-    <h3>Вариант 1: Рудные месторождения. Пологое залегание рудных тел (до 30 градусов)</h3><br>
-    <p>Скачать шаблон</p>
-    <a href="../static/data.xlsx" download>
-    <img src="../static/download.jpg" alt="W3Schools" width="60" height="60">
-    </a></center>
-    <br><br><br>
-    <center><img src="../static/oilfield.jpg" alt="W3Schools" width=60% >
-    <br>
-    <h3>Вариант 2: Нефтяные месторождения</h3><br>
-    <p>Скачать шаблон</p>
-    <a href="../static/data.xlsx" download>
-    <img src="../static/download.jpg" alt="W3Schools" width="60" height="60">
-    </a></center>
+<center><h2>Шалоны исходных данных для различных вариантов расчета:</h2>
+        <div class="MENUITEM">
+  		<ul>
+                <li>
+                    <a href="../static/data.xlsx" download>
+                        <span class="icon"><i class="fa-solid fa-industry"></i></span>
+                        <span class="item">Вариант 1: Рудные месторождения. Пологое залегание рудных тел (до 30 градусов, заданный коэф. вскрыши)</span>
+                        <span class="icon"><i class="fa-solid fa-download"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../static/data.xlsx" download>
+                        <span class="icon"><i class="fa-solid fa-industry"></i></span>
+                        <span class="item">Вариант 2: Россыпное золото. (заданный коэф. вскрыши)</span>
+                        <span class="icon"><i class="fa-solid fa-download"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../static/data.xlsx" download>
+                        <span class="icon"><i class="fa-solid fa-flask"></i></span>
+                        <span class="item">Вариант 3: Нефтяное месторождение. (заданный темп снижения добычи по скважине)</span>
+                        <span class="icon"><i class="fa-solid fa-download"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../static/data.xlsx" download>
+                        <span class="icon"><i class="fa-solid fa-flask"></i></span>
+                        <span class="item">Вариант 4: В разработке....</span>
+                        <span class="icon"><i class="fa-solid fa-download"></i></span>
+                    </a>
+                </li>
+                </ul>         
+        </div>
 {% endblock %}
